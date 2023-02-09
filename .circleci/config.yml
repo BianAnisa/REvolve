@@ -15,11 +15,15 @@ jobs:
           pkg-manager: pipenv
       - run:
           command: |
+            cd script
+            bash onefile.sh
+            cd .. 
+          name: Sample algorithms
+       - run:
+          command: |
             cd revolve
             pipenv run pytest -v --cov-report term-missing --cov=algorithms tests/algorithms
-
           name: Test algorithms
-
 
   build-and-test-architectures:
     docker:
@@ -31,11 +35,15 @@ jobs:
           pkg-manager: pipenv
       - run:
           command: |
+            cd script
+            bash onefile.sh
+            cd .. 
+          name: Sample architectures
+      - run:
+          command: |
             cd revolve
             pipenv run pytest -v --cov-report term-missing --cov=architectures tests/architectures
-
           name: Test architectures
-
 
   build-and-test-grids:
     docker:
@@ -47,9 +55,14 @@ jobs:
           pkg-manager: pipenv
       - run:
           command: |
+            cd script
+            bash onefile.sh
+            cd .. 
+          name: Sample grids
+      - run:
+          command: |
             cd revolve
             pipenv run pytest -v --cov-report term-missing --cov=grids tests/grids
-
           name: Test grids
 
 
@@ -63,9 +76,14 @@ jobs:
           pkg-manager: pipenv
       - run:
           command: |
+            cd script
+            bash onefile.sh
+            cd .. 
+          name: Sample operators
+      - run:
+          command: |
             cd revolve
             pipenv run pytest -v --cov-report term-missing --cov=operators tests/operators
-
           name: Test operators
 
 workflows:
