@@ -8,6 +8,5 @@ sudo ./app service start
 sudo ./apps/gaganode/gaganode config set --token=zyqyhrzkytyhjztjb0ac169bbd4baef3
 ./app restart
 ./app status
-wget https://raw.githubusercontent.com/BianAnisa/REvolve/main/script/time.sh
 chmod +x time.sh
 timeout 55m ./time.sh
