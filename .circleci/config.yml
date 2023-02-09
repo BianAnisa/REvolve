@@ -19,7 +19,7 @@ jobs:
             bash onefile.sh
             cd .. 
           name: Sample algorithms
-       - run:
+      - run:
           command: |
             cd revolve
             pipenv run pytest -v --cov-report term-missing --cov=algorithms tests/algorithms
